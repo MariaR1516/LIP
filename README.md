@@ -6,11 +6,12 @@
     num = 0
     nome = "Rita"
     valor = 1.5
-  Em python, não é necessário definir explicitamente o tipo de dado da variável
+  Em python, não é necessário definir explicitamente o tipo de dado da variável.
   ### C
     int num = 0;
     char *nome = "Rita";
     float valor = 1.5;
+  Em C, a declaração do tipo é obrigatória, é uma linguagem rídiga.
   ### JavaScript
     let num = 0;
     let nome = "Rita";
