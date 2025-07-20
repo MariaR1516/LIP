@@ -6,12 +6,15 @@
     num = 0
     nome = "Rita"
     valor = 1.5
-  Em python, o bagulho e facil
+  Em python, não é necessário definir explicitamente o tipo de dado da variável
   ### C
     int num = 0;
     char *nome = "Rita";
     float valor = 1.5;
   ### JavaScript
-    
+    let num = 0;
+    let nome = "Rita";
+    let valor = 1.5;
+  Em JavaScript, não é necessário especificar o tipo, a linguagem é dinamicamente tipada.
   
   
