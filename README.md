@@ -23,8 +23,7 @@
 
   ## Desafio 5 
     import random
-
-  # Número secreto entre 1 e 10
+    # Número secreto entre 1 e 10
     secreto = random.randint(1, 10)
     tentativas = 5
     pontos = 0
