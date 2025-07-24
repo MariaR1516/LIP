@@ -213,17 +213,17 @@ https://drive.google.com/file/d/172RyGdY1IEzWGcHrY3WBajkKkPP3tkdH/view?usp=shari
 
 
 ├── 12-programacao-logica/ --> README.md + problema lógico
-pseudocódigo
-fatos:
-  pai(joao, maria)
-  pai(joao, jose)
-  mae(ana, maria)
-  mae(ana, jose)
+### pseudocódigo
+    fatos:
+    pai(joao, maria)
+    pai(joao, jose)
+    mae(ana, maria)
+    mae(ana, jose)
 
-regras:
-  progenitor(X, Y) := pai(X, Y) OU mae(X, Y)
+    regras:
+    progenitor(X, Y) := pai(X, Y) OU mae(X, Y)
 
-  irmao(X, Y) :=
+    irmao(X, Y) :=
     pai(P, X) = pai(P, Y) E
     mae(M, X) = mae(M, Y) E
     X ≠ Y
