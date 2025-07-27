@@ -8,7 +8,38 @@ Fundamentos-Linguagens-UFC/
 │<img width="1920" height="1080" alt="Ambientes de Programação" src="https://github.com/user-attachments/assets/350463cf-2d78-4573-b1dd-725b87875041" />
 
 ├── 03-sintaxe-semantica/ --> README.md + gramática criada
+### MiniDraw 
+    Objetivo: Executar comandos para desenhar formas simples com apenas uma palavra.
+    | Token       | Tipo          | Exemplo     |
+    | ----------- | ------------- | ----------- |
+    | `CIRCULO`   | Palavra-chave | `CIRCULO`   |
+    | `QUADRADO`  | Palavra-chave | `QUADRADO`  |
+    | `TRIANGULO` | Palavra-chave | `TRIANGULO` |
+    | `EOL`       | Fim da linha  | `\n`        |
+    ### Pseudocódigo
+    <programa>    ::= <forma> <programa> | 
 
+    <forma>   ::= 'CIRCULO'
+               | 'QUADRADO'
+               | 'TRIANGULO'
+    ### Análise Léxica 
+    codigo = '''
+    CIRCULO
+    QUADRADO
+    TRIANGULO
+    CIRCULO
+    '''
+    tokens = []
+
+    linhas = codigo.strip().split('\n')
+
+    for linha in linhas:
+    comando = linha.strip()
+    if comando in ['CIRCULO', 'QUADRADO', 'TRIANGULO']:
+        tokens.append(('FORMA', comando))
+
+    for token in tokens:
+    print(token)
 
 ├── 04-tipos-de-dados/ --> README.md + comparativo de tipos
   ### Python
