@@ -3,144 +3,19 @@ Fundamentos-Linguagens-UFC/
 ├── 01-introducao/ --> README.md com explicação e materiais da Introdução às Linguagens
 
 
-
 ├── 02-ambientes/ --> README.md + diagramas de ambientes de programação
 
 
 ├── 03-sintaxe-semantica/ --> README.md + gramática criada
-### MiniDraw 
-    Objetivo: Executar comandos para desenhar formas simples com apenas uma palavra.
-    | Token       | Tipo          | Exemplo     |
-    | ----------- | ------------- | ----------- |
-    | `CIRCULO`   | Palavra-chave | `CIRCULO`   |
-    | `QUADRADO`  | Palavra-chave | `QUADRADO`  |
-    | `TRIANGULO` | Palavra-chave | `TRIANGULO` |
-    | `EOL`       | Fim da linha  | `\n`        |
-    ### Pseudocódigo
-    <programa>    ::= <forma> <programa> | 
 
-    <forma>   ::= 'CIRCULO'
-               | 'QUADRADO'
-               | 'TRIANGULO'
-    ### Análise Léxica 
-    codigo = '''
-    CIRCULO
-    QUADRADO
-    TRIANGULO
-    CIRCULO
-    '''
-    tokens = []
-
-    linhas = codigo.strip().split('\n')
-
-    for linha in linhas:
-    comando = linha.strip()
-    if comando in ['CIRCULO', 'QUADRADO', 'TRIANGULO']:
-        tokens.append(('FORMA', comando))
-
-    for token in tokens:
-    print(token)
 
 ├── 04-tipos-de-dados/ --> README.md + comparativo de tipos
-  ### Python
-    num = 0
-    nome = "Rita"
-    valor = 1.5
-  Em python, não é necessário definir explicitamente o tipo de dado da variável.
-  ### C
-    int num = 0;
-    char *nome = "Rita";
-    float valor = 1.5;
-  Em C, a declaração do tipo é obrigatória, é uma linguagem rígida.
-  ### JavaScript
-    let num = 0;
-    let nome = "Rita";
-    let valor = 1.5;
-  Em JavaScript, não é necessário especificar o tipo, a linguagem é dinamicamente tipada.
-
 
 
 ├── 05-estruturas-de-controle/--> README.md + código de exemplo
- import random
-    # Número secreto entre 1 e 10
-    secreto = random.randint(1, 10)
-    tentativas = 5
-    pontos = 0
 
-    print("Bem-vindo ao jogo de adivinhação!")
-    print("Você tem 5 tentativas para acertar o número entre 1 e 10.\n")
-
-    while tentativas > 0:
-        palpite = int(input(f"Tentativa ({6 - tentativas}/5): Digite seu palpite: "))
-
-    if palpite < 1 or palpite > 10:
-        print("O número deve estar entre 1 e 10!")
-        
-
-    if palpite == secreto:
-        pontos = tentativas * 2  # mais pontos se acertar com menos tentativas
-        print(f"Parabéns! Você acertou o número {secreto}!")
-        print(f"Pontuação: {pontos} pontos")
-        break
-    elif palpite < secreto:
-        print("Muito baixo!")
-    else:
-        print("Muito alto!")
-
-    tentativas -= 1
-
-    else:
-        print(f"\n Fim de jogo! O número era {secreto}.")
-  
 
 ├── 06-subprogramas/ --> README.md + exemplos de funções
-  ### C
-    #include <stdio.h>
-
-    void porValor(int x) {
-    x = x + 10;
-    printf("Dentro da função porValor: x = %d\n", x);
-    }
-
-    void porReferencia(int *x) {
-    *x = *x + 10;
-    printf("Dentro da função porReferencia: x = %d\n", *x);
-    }
-
-    int main() {
-    int a = 5;
-
-    printf("Antes da função porValor: a = %d\n", a);
-    porValor(a); // Passagem por valor (cópia da variável)
-    printf("Depois da função porValor: a = %d\n\n", a);
-
-    printf("Antes da função porReferencia: a = %d\n", a);
-    porReferencia(&a); // Passagem por referência (endereço da variável)
-    printf("Depois da função porReferencia: a = %d\n", a);
-
-    return 0;
-    }
-  ### Python
-  
-    def por_valor(x):
-    x += 10
-    print("Dentro da função por_valor: x =", x)
-
-    def por_referencia(lista):
-    lista.append(10)
-    print("Dentro da função por_referencia: lista =", lista)
-
-    a = 5
-    print("Antes da função por_valor: a =", a)
-    por_valor(a)  # Inteiro é imutável em Python
-    print("Depois da função por_valor: a =", a)
-
-    print()
-  
-    b = [1, 2, 3]
-    print("Antes da função por_referencia: b =", b)
-    por_referencia(b)  # Lista é mutável em Python
-    print("Depois da função por_referencia: b =", b)
 
 
 
