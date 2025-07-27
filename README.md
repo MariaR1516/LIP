@@ -18,9 +18,7 @@ Fundamentos-Linguagens-UFC/
 ├── 06-subprogramas/ --> README.md + exemplos de funções
 
 
-
 ├── 07-implementacao-subprogramas/ --> README.md + desenho da pilha
-https://drive.google.com/file/d/172RyGdY1IEzWGcHrY3WBajkKkPP3tkdH/view?usp=sharing
 
 
 ├── 08-orientacao-objetos/ --> README.md + modelagem de classes
