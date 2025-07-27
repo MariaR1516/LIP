@@ -1,7 +1,7 @@
 Fundamentos-Linguagens-UFC/
 
 ├── 01-introducao/ --> README.md com explicação e materiais da Introdução às Linguagens
-<img width="1920" height="1080" alt="History of Borcelle (1)" src="https://github.com/user-attachments/assets/7c1c1282-a971-47f7-8f8b-55daa469dc0e" />
+
 
 
 ├── 02-ambientes/ --> README.md + diagramas de ambientes de programação
