@@ -25,99 +25,12 @@ Fundamentos-Linguagens-UFC/
 
 
 ├── 09-concorrencia/ --> README.md + exemplo de concorrência
-### Diferença 
-    Threads compartilham a mesma área de memória dentro de um processo, o que torna a comunicação entre elas mais simples e rápida. Por serem mais leves, são ideais para tarefas que envolvem espera, como leitura de arquivos ou chamadas de rede (I/O-bound). No entanto, esse compartilhamento pode causar conflitos se não for bem controlado. Já Processos, por outro lado, têm memória isolada, o que os torna mais seguros e estáveis, pois um processo não afeta diretamente outro. Eles são mais indicados para tarefas pesadas de cálculo (CPU-bound), mas possuem maior custo de criação e comunicação, já que exigem mecanismos como pipes ou sockets.
-  ### Threads 
-    import threading
-    import time
-
-    def preparar_prato(nome):
-    print(f"Começando a preparar {nome}...")
-    time.sleep(2)
-    print(f"Prato {nome} pronto!")
-
-    # Criando threads para cada prato
-    pratos = ['Lasanha', 'Sopa', 'Salada']
-    threads = []
-
-    for prato in pratos:
-    t = threading.Thread(target=preparar_prato, args=(prato,))
-    threads.append(t)
-    t.start()
-
-    # Espera todos os pratos ficarem prontos
-    for t in threads:
-    t.join()
-
-    print("Todos os pratos foram preparados.")
-    
-### Multiprocessing
-
-    from multiprocessing import Process
-    import time
-
-    def calcular_calorias(prato, calorias_por_ingrediente):
-    total = sum(calorias_por_ingrediente)
-    print(f"{prato} tem aproximadamente {total} calorias.")
-    time.sleep(1)
-
-    if __name__ == '__main__':
-    pratos_info = {
-        "Lasanha": [200, 300, 150],
-        "Sop
-        a": [100, 80, 90],
-        "Salada": [50, 40, 30]
-    }
-
-    processos = []
-
-    for prato, calorias in pratos_info.items():
-        p = Process(target=calcular_calorias, args=(prato, calorias))
-        processos.append(p)
-        p.start()
-
-    for p in processos:
-        p.join()
-
-    print("Cálculos de calorias finalizados.")
 
 
 ├── 10-gerenciamento-memoria/ --> README.md + quadro comparativo
-| Característica                | Java (GC Automático)                                | C (malloc/free Manual)                          |
-|------------------------------|------------------------------------------------------|-------------------------------------------------|
-| Tipo de gerenciamento        | Automático (Garbage Collector)                      | Manual (Programador gerencia com malloc e free) |
-| Alocação de memória          | new para objetos (heap)                             | malloc, calloc, realloc (heap)            |
-| Liberação de memória         | Feita automaticamente pelo Garbage Collector        | Responsabilidade do programador (free)        |
-| Risco de vazamento de memória| Baixo (mas ainda possível se houver referências não liberadas) | Alto (se free não for usado corretamente)  |
-| Risco de uso de memória inválida | Baixo (uso após liberação não é possível diretamente) | Alto (uso de ponteiros para memória já liberada)|
-| Controle de ponteiros        | Não há acesso direto a ponteiros                    | Controle completo de ponteiros                  |
-| Performance                  | Leve impacto por coleta automática                  | Alto desempenho se bem gerenciado               |
-| Segurança                    | Mais seguro contra erros de memória                 | Mais propenso a bugs de alocação/liberação      |
-| Complexidade para o programador | Baixa (GC cuida da limpeza)                       | Alta (programador cuida de toda a gestão)       |
 
 
 ├── 11-programacao-funcional/ --> README.md + exemplo funcional
- ### Python
- 
-    from functools import reduce
-
-    # Lista de dicionários (funcionários)
-    funcionarios = [
-    {"nome": "Ana", "salario": 4000, "ativo": True},  
-    {"nome": "Bruno", "salario": 3500, "ativo": False},
-    {"nome": "Carla", "salario": 5000, "ativo": True},
-    {"nome": "Diego", "salario": 4500, "ativo": True},
-    ]
-    # Função de alta ordem: filtra os ativos
-    ativos = list(filter(lambda f: f["ativo"], funcionarios))
-
-    # Função de alta ordem: aplica desconto de 15%
-    salarios_liquidos = list(map(lambda f: f["salario"] * 0.85, ativos))
-
-    # Função de alta ordem: soma os salários líquidos
-    soma_salarios = reduce(lambda acc, val: acc + val, salarios_liquidos)
-
-    print(f"Total em salários líquidos dos funcionários ativos: R$ {soma_salarios:.2f}")
 
 
 ├── 12-programacao-logica/ --> README.md + problema lógico
